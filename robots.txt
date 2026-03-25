@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://h-hye.github.io/sitemap.xml

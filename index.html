@@ -1,12 +1,274 @@
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <script>
-    window.location.href = "/JINWOO/";
-  </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>진우네편육</title>
+    <meta name="description" content="진우네편육 메뉴, 리뷰, 가격 정보">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #eaf4ff, #ffffff);
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        .main-title {
+            color: #0d6efd;
+            font-weight: 800;
+        }
+
+        .section-title {
+            color: #0d6efd;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* 카드 공통 */
+        .custom-card {
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.08);
+            transition: 0.2s;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(13, 110, 253, 0.15);
+        }
+
+        /* 정보 영역 */
+        .info-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 300px;
+            border-radius: 16px 0 0 16px;
+        }
+
+        .info-box {
+            padding: 30px;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #0d6efd;
+            width: 90px;
+            display: inline-block;
+        }
+
+        .info-desc {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f7ff;
+            border-radius: 10px;
+        }
+
+        /* 주문 버튼 */
+        .order-main-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #4c6fff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .order-main-btn:hover {
+            background-color: #3557e0;
+            color: white;
+     }
+
+        /* 메뉴 */
+        .menu-img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* 리뷰 */
+        .review-link {
+            text-decoration: none;
+            color: #0d6efd;
+            font-weight: 500;
+        }
+
+        .review-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .info-img {
+                border-radius: 16px 16px 0 0;
+            }
+        }
+
+        /* 가격 */
+        .price {
+            font-size: 18px;
+            font-weight: 500;
+            color: #0d6efd;
+            margin-top: 5px;
+        }
+
+    </style>
 </head>
+
 <body>
-  이동 중입니다...
+
+<div class="container py-5">
+
+    <!-- 1. 상단 -->
+    <div class="text-center mb-5">
+        <h1 class="main-title">진우네편육</h1>
+        <p class="text-muted">쫄깃한 닭발편육과 바삭한 김부각 맛집</p>
+    </div>
+
+
+    <!-- 2. 가게 정보 + 대표 사진 -->
+    <div class="card custom-card mb-5">
+        <div class="row g-0">
+
+            <!-- 왼쪽 이미지 -->
+            <div class="col-md-6">
+                <img src="https://via.placeholder.com/800x600"
+                     class="info-img"
+                     alt="대표 메뉴">
+            </div>
+
+            <!-- 오른쪽 정보 -->
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h3 class="section-title">가게 정보</h3>
+
+                    <p><span class="info-label">전화</span>010‑7669‑1158</p>
+                    <p><span class="info-label">주소</span>택배 주문만 가능합니다.</p>
+                    <p><span class="info-label">택배</span>전국 가능, 대량 주문 가능</p>
+
+                    <div class="info-desc">
+                        쫄깃한 식감과 깊은 맛을 자랑하는 편육 전문점입니다.
+                        술안주, 식사 모두 가능한 만능 메뉴를 제공합니다.
+                    </div>
+                    <a href="order.html" class="order-main-btn">주문하기</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- 3. 메뉴 -->
+    <h3 class="section-title">메뉴</h3>
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-4">
+            <div class="card custom-card p-3">
+                <img src="https://via.placeholder.com/400x300" class="menu-img mb-2">
+                <h5>닭발편육</h5>
+                <p class="text-muted">쫄깃하고 매콤한 인기 메뉴</p>
+                <p class="price">1kg 32,000원</span></p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card custom-card p-3">
+                <img src="https://via.placeholder.com/400x300" class="menu-img mb-2">
+                <h5>김부각</h5>
+                <p class="text-muted">바삭함이 살아있는 수제 김부각</p>
+                <p class="price">100장 35,000원</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 4. 리뷰 -->
+    <h3 class="section-title">리뷰</h3>
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <div class="card custom-card p-3">
+                <a class="review-link" href="https://blog.naver.com/pogee774/223941272589" target="_blank">
+                    편육맛집 진우네편육 대량 택배 안내
+                </a>
+                <small class="text-muted">pogee774님의 블로그</small>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card custom-card p-3">
+                <a class="review-link" href="https://blog.naver.com/pogee774/223959622581" target="_blank">
+                    닭발편육맛집 진우네편육 솔직 후기
+                </a>
+                <small class="text-muted">pogee774님의 블로그</small>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card custom-card p-3">
+                <a class="review-link" href="https://blog.naver.com/r8598985/223943040460" target="_blank">
+                    전주편육맛집 택배로 받았던 진우네편육
+                </a>
+                <small class="text-muted">와니거니</small>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card custom-card p-3">
+                <a class="review-link" href="https://cafe.naver.com/dlsaorwjs1254/2394?art=ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6ImRsc2FvcndqczEyNTQiLCJhcnRpY2xlSWQiOjIzOTQsImlzc3VlZEF0IjoxNzc0MzUxNjExMjE4fQ.nJfHWwfIpm-N5zCMycjjxOx_bdm8Jrpi2BfdfSQw0_0" target="_blank">
+                    닭발 편육 택배로 주문해 먹어 본 후기(쫄깃한 식감+매콤한 맛)
+                </a>
+                <small class="text-muted">모두의 전주(네이버카페)</small>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card custom-card p-3">
+                <a class="review-link" href="https://blog.naver.com/n5989241/223964637551" target="_blank">
+                    진우네편육 맥주, 소주 다 어울리는 만능 안주 맛집
+                </a>
+                <small class="text-muted">부주 블로그</small>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer-info">
+  <div class="footer-container">
+    <p>사업자등록번호 : 123-45-67890 | 통신판매업신고번호 : 123-45-67890</p>
+    <p>대표자 : 임말순 | 주소 : 전북특별자치도 임실군 ㅇㅇ</p>
+  </div>
+</footer>
+
+<style>
+  .footer-info {
+    background-color: #0d6efd;
+    color: white;
+    padding: 20px 15px;
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-container p {
+    margin: 4px 0;
+  }
+</style>
+
 </body>
 </html>

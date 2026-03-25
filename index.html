@@ -10,7 +10,7 @@
     <meta property="og:type" content="website"> 
     <meta property="og:title" content="진우네편육 | 김부각, 닭발, 편육 택배">
     <meta property="og:description" content="진우네 편육 메뉴, 가격 안내 및 김부각 택배 주문 가능합니다.">
-    <meta property="og:image" content="http://www.mysite.com/myimage.jpg">
+    <meta property="og:image" content="master/myimage.jpg">
     <meta property="og:url" content="https://h-hye.github.io">
     <meta name="robots" content="index,follow">
 
@@ -51,6 +51,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             min-height: 300px;
             border-radius: 16px 0 0 16px;
         }
@@ -96,8 +97,11 @@
 
         /* 메뉴 */
         .menu-img {
-            height: 200px;
+            width: 100%;
+            height: 260px;
             object-fit: cover;
+            object-position: center; /* 사진 잘리면 top or center */
+            display: block;
             border-radius: 12px;
         }
 
@@ -146,9 +150,9 @@
 
             <!-- 왼쪽 이미지 -->
             <div class="col-md-6">
-                <img src="https://via.placeholder.com/800x600"
-                     class="info-img"
-                     alt="대표 메뉴">
+                <img src="https://h-hye.github.io/JINWOO/myimage.jpg"
+                class="info-img"
+                alt="대표 메뉴">
             </div>
 
             <!-- 오른쪽 정보 -->
@@ -178,7 +182,7 @@
 
         <div class="col-md-4">
             <div class="card custom-card p-3">
-                <img src="https://via.placeholder.com/400x300" class="menu-img mb-2">
+                <img src="https://h-hye.github.io/JINWOO/myimage.jpg" class="menu-img mb-2" alt="편육 사진">
                 <h5>닭발편육</h5>
                 <p class="text-muted">쫄깃하고 매콤한 인기 메뉴</p>
                 <p class="price">1kg 32,000원</span></p>
@@ -187,7 +191,7 @@
 
         <div class="col-md-4">
             <div class="card custom-card p-3">
-                <img src="https://via.placeholder.com/400x300" class="menu-img mb-2">
+                <img src="https://h-hye.github.io/JINWOO/myimage.jpg" class="menu-img mb-2" alt="김부각 사진">
                 <h5>김부각</h5>
                 <p class="text-muted">바삭함이 살아있는 수제 김부각</p>
                 <p class="price">100장 35,000원</p>

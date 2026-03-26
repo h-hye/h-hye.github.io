@@ -74,7 +74,7 @@ function sendSMS() {
     message += `\n📅 배송 날짜: ${date}`;
     message += `\n💰 총 금액: ${total}원`;
 
-    const phoneNumber = "010‑7669‑1158"; // 사장님 전화번호
+    const phoneNumber = "+821076691158"; // 사장님 전화번호
 
     window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
 }

@@ -48,7 +48,7 @@ function sendSMS() {
     const date = document.getElementById("delivery-date").value;
     const total = document.getElementById("total-price").innerText;
 
-    let message = "진우네편육 주문서\n\n";
+    let message = "임말순편육 주문서\n\n";
     let hasOrder = false;
 
     items.forEach(item => {

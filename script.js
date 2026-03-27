@@ -56,7 +56,7 @@ function sendSMS() {
         const qty = parseInt(item.querySelector(".qty").innerText);
 
         if (qty > 0) {
-            message += `🍽️${name} : ${qty}개\n`;
+            message += `🍽️ ${name} : ${qty}개\n`;
             hasOrder = true;
         }
     });

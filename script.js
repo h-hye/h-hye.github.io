@@ -53,9 +53,30 @@ function sendSMS() {
     const items = document.querySelectorAll(".menu-item");
     const date = document.getElementById("delivery-date").value;
     const total = document.getElementById("total-price").innerText;
+    const customerName = document.getElementById("customer-name").value;
+    const customerPhone = document.getElementById("customer-phone").value;
+    const postcode = document.getElementById("postcode").value;
+    const address = document.getElementById("address").value;
+    const detail = document.getElementById("detail").value;
 
-    let message = "📦 임말순편육 주문서\n\n";
+    let message = "임말순편육 주문서\n";
+    message += `━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
     let hasOrder = false;
+
+    if (!date) {
+        alert("배송 날짜를 선택해 주세요!");
+        return;
+    }
+
+    if (!customerName || !customerPhone) {
+        alert("주문자 정보를 입력해 주세요!");
+        return;
+    }
+
+    if (!postcode || !address || !detail) {
+    alert("배송지 정보를 모두 입력해 주세요!");
+    return;
+    }
 
     items.forEach(item => {
         const name = item.querySelector(".menu-name").innerText;
@@ -66,44 +87,25 @@ function sendSMS() {
             hasOrder = true;
         }
     });
-
     if (!hasOrder) {
         alert("메뉴를 선택해 주세요!");
         return;
     }
+    message += `💰 총 금액: ${total}원\n`;
 
-    if (!date) {
-        alert("배송 날짜를 선택해 주세요!");
-        return;
-    }
+    message += `--------------------------\n\n`;
 
-    const customerName = document.getElementById("customer-name").value;
-    const customerPhone = document.getElementById("customer-phone").value;
-
-    const postcode = document.getElementById("postcode").value;
-    const address = document.getElementById("address").value;
-    const detail = document.getElementById("detail").value;
-
-    if (!customerName || !customerPhone) {
-        alert("주문자 정보를 입력해 주세요!");
-        return;
-    }
-
-    if (!postcode || !address || !detail) {
-    alert("배송지 정보를 입력해 주세요!");
-    return;
-    }
-
-    message += `\n━━━━━━━━━━━━━━━\n`;
     message += `👤 주문자: ${customerName}\n`;
-    message += `📞 연락처: ${customerPhone}\n`;
+    message += `📞 연락처: ${customerPhone}\n\n`;
 
-    message += `\n📍 배송지\n`;
+    message += `📍 배송지\n`;
     message += `우편번호 : ${postcode}\n`;
-    message += `주소 : ${address} ${detail}\n`;
+    message += `주소 : ${address} ${detail}\n\n`;
 
-    message += `\n📅 배송 날짜: ${date}`;
-    message += `\n💰 총 금액: ${total}원`;
+    message += `--------------------------\n\n`;
+
+    message += `📅 희망 배송 날짜: ${date}`;
+    
 
     const phoneNumber = "+821076691158";
     window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;

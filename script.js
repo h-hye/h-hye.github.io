@@ -60,7 +60,7 @@ function sendSMS() {
     const detail = document.getElementById("detail").value;
 
     let message = "임말순편육 주문서\n";
-    message += `━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━━\n\n`;
     let hasOrder = false;
 
     if (!date) {
@@ -91,20 +91,21 @@ function sendSMS() {
         alert("메뉴를 선택해 주세요!");
         return;
     }
-    message += `💰 총 금액: ${total}원\n`;
+    message += `\n💰 총 금액: ${total}원\n`;
 
-    message += `--------------------------\n\n`;
+    message += `----------------------------------------------------\n`;
 
     message += `👤 주문자: ${customerName}\n`;
     message += `📞 연락처: ${customerPhone}\n\n`;
 
     message += `📍 배송지\n`;
     message += `우편번호 : ${postcode}\n`;
-    message += `주소 : ${address} ${detail}\n\n`;
+    message += `주소 : ${address} ${detail}\n`;
 
-    message += `--------------------------\n\n`;
+    message += `----------------------------------------------------\n`;
 
-    message += `📅 희망 배송 날짜: ${date}`;
+    message += `📅 희망 배송 날짜: ${date}\n\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━━\n`;
     
 
     const phoneNumber = "+821076691158";

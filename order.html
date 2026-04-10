@@ -96,6 +96,10 @@
             font-size: 18px;
             margin-top: 20px;
         }
+        .form-label {
+            width: 80px;
+            margin-bottom: 0;
+        }
 
     </style>
 </head>
@@ -198,6 +202,54 @@
         </div>
     </div>
 
+    <!-- 5. 주문자 정보 -->
+    <h4 class="section-title">주문자 정보</h4>
+<div class="card custom-card mb-5">
+    <div class="card-body">
+        
+        <div class="my-2" >
+            <div class="d-flex align-items-center gap-3">
+                <label class="form-label" style="flex-shrink: 0;">이름</label>
+                <input type="text" class="form-control" style="flex: 0 0 200px;" 
+                placeholder="이름을 입력해주세요" id="customer-name">
+            </div>
+        </div>
+
+        <div class="my-2">
+            <div class="d-flex align-items-center gap-3">
+                <label class="form-label" style="flex-shrink: 0;">전화번호</label>
+                <input type="text" class="form-control" style="flex: 0 0 200px;" 
+                placeholder="010-1234-5678" id="customer-phone">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <!-- 6. 배송지 정보 -->
+    <h4 class="section-title">배송지 정보</h4>
+    <div class="card custom-card mb-5">
+        <div class="card-body">
+
+            <div class="my-3">
+                <div class="d-flex align-items-center gap-3">
+                    <input type="text" class="form-control" style="flex: 0 0 150px;" 
+                    id="postcode" placeholder="우편번호">
+                    <button class="btn btn-primary" style="flex-shrink: 0;" onclick="execDaumPostcode()">찾기</button>
+                </div>
+            </div>
+
+            <div class="my-3">
+                <input type="text" id="address" class="form-control" placeholder="도로명주소">
+            </div>
+
+            <div class="my-3">
+                <input type="text" id="detail" class="form-control" placeholder="상세주소 입력">
+            </div>
+
+        </div>
+    </div>
+
     <!-- 주문 버튼 -->
     <button class="order-main-btn" onclick="sendSMS()">주문하기</button>
     <p class="text-muted small mt-2" style="text-align: center;">
@@ -207,6 +259,7 @@
 
 </div>
 
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

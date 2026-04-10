@@ -1,14 +1,3 @@
-/* 수량 변경 */
-function changeQty(btn, amount) {
-    const qtyElement = btn.parentElement.querySelector(".qty");
-    let current = parseInt(qtyElement.innerText);
-
-    current += amount;
-    if (current < 0) current = 0;
-
-    qtyElement.innerText = current;
-}
-
 /* 금액 계산 */
 function changeQty(btn, amount) {
     const quantityBox = btn.parentElement;
@@ -42,13 +31,30 @@ function updateTotalPrice() {
     document.getElementById("total-price").innerText = total.toLocaleString();
 }
 
+/* 주소 검색 */
+function execDaumPostcode() {
+        new daum.Postcode({
+
+            oncomplete: function(data) {
+                console.log(data); // 확인용
+
+                var addr = data.roadAddress || data.jibunAddress;
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('postcode').value = data.zonecode;
+                document.getElementById("address").value = addr;
+                document.getElementById("detail").focus();
+            }
+            
+        }).open();
+    }
+
 /* 주문 문자 전송하기 */
 function sendSMS() {
     const items = document.querySelectorAll(".menu-item");
     const date = document.getElementById("delivery-date").value;
     const total = document.getElementById("total-price").innerText;
 
-    let message = "임말순편육 주문서\n\n";
+    let message = "📦 임말순편육 주문서\n\n";
     let hasOrder = false;
 
     items.forEach(item => {
@@ -71,10 +77,34 @@ function sendSMS() {
         return;
     }
 
+    const customerName = document.getElementById("customer-name").value;
+    const customerPhone = document.getElementById("customer-phone").value;
+
+    const postcode = document.getElementById("postcode").value;
+    const address = document.getElementById("address").value;
+    const detail = document.getElementById("detail").value;
+
+    if (!customerName || !customerPhone) {
+        alert("주문자 정보를 입력해 주세요!");
+        return;
+    }
+
+    if (!postcode || !address || !detail) {
+    alert("배송지 정보를 입력해 주세요!");
+    return;
+    }
+
+    message += `\n━━━━━━━━━━━━━━━\n`;
+    message += `👤 주문자: ${customerName}\n`;
+    message += `📞 연락처: ${customerPhone}\n`;
+
+    message += `\n📍 배송지\n`;
+    message += `우편번호 : ${postcode}\n`;
+    message += `주소 : ${address} ${detail}\n`;
+
     message += `\n📅 배송 날짜: ${date}`;
     message += `\n💰 총 금액: ${total}원`;
 
-    const phoneNumber = "+821076691158"; // 사장님 전화번호
-
+    const phoneNumber = "+821076691158";
     window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
 }
